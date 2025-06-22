@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About - Predictive Maintenance</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      background: url("{{ url_for('static', filename='324554-P9GY6X-129.jpg') }}") no-repeat center center fixed;
+      background-size: cover;
+      animation: floatBackground 8s ease-in-out infinite;
+    }
+
+    @keyframes floatBackground {
+      0%, 100% { background-position-y: 50%; }
+      50% { background-position-y: 45%; }
+    }
+
+    .navbar {
+      background-color: #ffffffdd;
+      padding: 10px 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+      margin: 20px auto;
+      max-width: 700px;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #007bff;
+      margin: 0 12px;
+      font-weight: bold;
+    }
+
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+
+    .about-box {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 700px;
+      width: 90%;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    p {
+      line-height: 1.6;
+      color: #444;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <a href="/">🏠 Home</a>
+    <a href="/history">📄 History</a>
+    <a href="/about">ℹ️ About</a>
+  </div>
+
+  <div class="about-box">
+    <h2>About the Predictive Maintenance Web App</h2>
+    <p>This web application helps manufacturing industries monitor and predict machine failures using a machine learning model.</p>
+    <p>Users can input real-time machine data such as temperature, torque, and rotational speed to determine the likelihood of machine failure.</p>
+    <p>The model behind this app is trained using Random Forest Classifier and leverages historical maintenance data to provide accurate predictions.</p>
+    <p>Predictions are saved in a MySQL database and can be reviewed anytime using the History tab.</p>
+    <p>Designed for smart factories to reduce downtime, improve maintenance planning, and save costs.</p>
+  </div>
+
+</body>
+</html>

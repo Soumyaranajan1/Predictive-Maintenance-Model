@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Prediction History</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      background: url("{{ url_for('static', filename='324554-P9GY6X-129.jpg') }}") no-repeat center center fixed;
+      background-size: cover;
+      animation: floatBackground 8s ease-in-out infinite;
+    }
+
+    @keyframes floatBackground {
+      0%, 100% { background-position-y: 50%; }
+      50% { background-position-y: 45%; }
+    }
+
+    .navbar {
+      background-color: #ffffffdd;
+      padding: 10px 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+      margin: 20px auto;
+      max-width: 700px;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #007bff;
+      margin: 0 12px;
+      font-weight: bold;
+    }
+
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+
+    .history-box {
+      background: rgba(255, 255, 255, 0.94);
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 900px;
+      width: 95%;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      margin: auto;
+      overflow-x: auto;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 6px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #f0f0f0;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <a href="/">🏠 Home</a>
+    <a href="/history">📄 History</a>
+    <a href="/about">ℹ️ About</a>
+  </div>
+
+  <div class="history-box">
+    <h2>Prediction History</h2>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Machine Type</th>
+        <th>Air Temp (K)</th>
+        <th>Process Temp (K)</th>
+        <th>Rot Speed (rpm)</th>
+        <th>Torque (Nm)</th>
+        <th>Tool Wear (min)</th>
+        <th>Prediction</th>
+        <th>Probability</th>
+        <th>Result</th>
+      </tr>
+      {% for row in rows %}
+      <tr>
+        <td>{{ row[0] }}</td>
+        <td>{{ row[1] }}</td>
+        <td>{{ row[2] }}</td>
+        <td>{{ row[3] }}</td>
+        <td>{{ row[4] }}</td>
+        <td>{{ row[5] }}</td>
+        <td>{{ row[6] }}</td>
+        <td>{{ row[7] }}</td>
+        <td>{{ "%.2f"|format(row[8]*100) }}%</td>
+        <td>{{ row[9] }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+
+</body>
+</html>
