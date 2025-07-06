@@ -1,3 +1,5 @@
+![Uploading image.png…]()
+
 # 🛠️ Predictive Maintenance Web App for Manufacturing Machines
 
 A machine learning–powered web application to predict potential failures in manufacturing machines based on real-time sensor data. This project aims to reduce unplanned downtime and optimize maintenance schedules using predictive analytics.
