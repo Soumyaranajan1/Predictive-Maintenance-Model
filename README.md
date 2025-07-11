@@ -1,4 +1,4 @@
-![Uploading image.png…]()
+<img width="275" height="183" alt="image" src="https://github.com/user-attachments/assets/e11a8d25-fc79-4101-bc5e-d1fdba46bb9e" />
 
 # 🛠️ Predictive Maintenance Web App for Manufacturing Machines
 
